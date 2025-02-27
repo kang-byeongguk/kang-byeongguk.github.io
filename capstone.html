@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캡스톤</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./capstone.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-input" >
+            <input type="text" placeholder="Search">
+            <button>
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+            </button>
+        </div>
+        <div class="nav-mb-right">
+            <i class="fa-solid fa-bars" style="margin-right: 40px;"></i>
+        </div>
+        <div class="nav-desk-right">
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <span style="margin-right: 75px; padding-left: 10px;">Byeongguk</span>
+        </div>
+    </nav>
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <div class="icons">
+                <div>
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-headphones"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-flag"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+            </div>
+            <div class="icons-description">
+                <div>
+                    <p class="items">Home</p>
+                </div>
+                <div>
+                    <p class="items">Services</p>
+                </div>
+                <div>
+                    <p class="items">Alerts</p>
+                </div>
+                <div>
+                    <p class="items">Stats</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-container">
+        <h3 class="dash-name" style="padding-top:10px">Dashboard</h3>
+        <div class="dashboard">
+            <div class="dash-bluebox">
+                <div class="dash-text">
+                    <p>Earnings (Monthly)</p>
+                    <h3>$400,000</h3>
+                </div>
+                <div class="dash-icon">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+            </div>
+            <div class="dash-skybox">
+                <div class="dash-text">
+                    <p>Earnings (Annual)</p>
+                    <h3>$800,000</h3>
+                </div>
+                <div class="dash-icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+            </div>
+            <div class="dash-greenbox">
+                <div class="dash-text">
+                    <p>Tasks</p>
+                    <h3>13</h3>
+                </div>
+                <div class="dash-icon">
+                    <i class="fa-solid fa-list-ul"></i>
+                </div>
+            </div>
+            <div class="dash-orangebox">
+                <div class="dash-text">
+                    <p>Requests</p>
+                    <h3>26</h3>
+                </div>
+                <div class="dash-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+            </div>
+            
+        </div>
+        <div class="bottom-container">
+            <div class="graph">
+                <div class="graph-title">
+                    Earnings Overview
+                </div>
+                <div class="graph-data">
+                    <div>
+                        <canvas id="myChart" style="height:400px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="task-container">
+                <div class="task-title">Tasks</div>
+                <div class="task-item">Borrowed Items</div>
+                <div class="task-item">Trello requests</div>
+                <div class="task-item">Marked Comments</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+              label: 'Dataset',
+              data: [65, 59, 80, 81, 56, 55, 40],
+              fill: true,
+              borderColor: 'rgb(73, 75, 179)', // #494bb3 변환
+              backgroundColor: 'rgba(73, 75, 179, 0.2)', // 연한 색상으로 채움
+              tension: 0.1
+            }]
+          },
+          options: {
+            responsive: true,
+    maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      
+      
+</body>
+
+</html>
